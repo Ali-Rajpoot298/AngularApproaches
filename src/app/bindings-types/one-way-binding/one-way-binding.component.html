@@ -1,0 +1,62 @@
+<p>one-way-binding works!</p>
+<label>Interpolation</label> 
+<input type="checkbox" (click)="Show('Inerpolation')"><br>
+<label>Property Binding</label> 
+<input type="checkbox" (click)="Show('PropertyBinding')"><br>
+<label>Event Binding</label> 
+<input type="checkbox" (click)="Show('EventBinding')"><br>
+<label>Style Binding</label> 
+<input type="checkbox" (click)="Show('StyleBinding')"><br>
+<label>Class Binding</label> 
+<input type="checkbox" (click)="Show('ClassBinding')"><br>
+<label>Attribute Binding</label> 
+<input type="checkbox" (click)="Show('AttributeBinding')"><br>
+
+<div [ngSwitch]="value">
+    <h1>One Way Binding</h1>
+    <h2>One-way binding refers to the flow of data from the component (business logic) to the view (template) or from the view to the component, but not both simultaneously.</h2>
+<div *ngSwitchCase="'Inerpolation'">    
+    <h3>Inerpolation</h3>
+    <label><b>My name is : </b>{{name}}</label>
+</div>
+<div *ngSwitchCase="'PropertyBinding'">    
+    <h3>Property Binding</h3>
+    <h2>Binds a property of a DOM element to a property or expression in the component, allowing you to dynamically set properties. e.g</h2>
+    <h2>[src]="imageUrl"   src is a DOM element, here we bind src property with imageURl proerpty which is the property define in component</h2>
+    <img [src]="imageUrl"/>
+</div>
+<div *ngSwitchCase="'EventBinding'">    
+    <h3>Event Binding</h3>
+    <h2>allows you to capture and respond to events raised by the DOM elements in your application. It facilitates communication from the view (template) to the component (business logic).</h2>
+    <h2> Events like onclick, onInputchange(), onMouseOver() etc </h2>
+    <button (click)="clickMe()">This is Event</button>
+</div>
+<div *ngSwitchCase="'StyleBinding'">    
+    <h3>Style Binding</h3>
+    <h2>Used to dynamically set the value of CSS styles based on conditions.</h2>
+    <!-- Dynamically set the text color based on the value of textColor -->
+    <div [style.color]="textColor">Dynamic Text Color</div>
+    <!-- Conditionally set the font size based on the value of isLargeText -->
+    <div [style.font-size.px]="isLargeText1 ? 20 : 14">Conditional Font Size</div>
+    <div [style.font-size.px]="isLargeText2 ? 20 : 14">Conditional Font Size</div>
+    
+    <!-- Responsively set margin based on the screen width -->
+    <div [style.margin]="screenWidth > 768 ? '20px' : '10px'">Responsive Margin</div>
+</div>   
+<div *ngSwitchCase="'ClassBinding'">    
+    <h3>Class Binding</h3>
+    <h2>class binding in Angular is primarily used for dynamically applying or removing CSS classes based on conditions</h2>
+    <div [class.highlight]="isHighlighted1">not Hilight me</div>
+    <div [class.highlight]="isHighlighted2">Hilight me</div>
+</div>
+<div *ngSwitchCase="'AttributeBinding'">   
+    <h3>Attribute Binding</h3>
+    <h2>Superset of class and style bindings</h2>
+    <h2>a mechanism that allows you to dynamically set the value of an HTML attribute for a DOM element based on an expression in your component. </h2>
+    
+    <button [attr.disabled]="isButtonDisabled">Click me</button>
+    <div [attr.class]="dynamicClass">Dynamic Styling</div>
+</div>    
+    
+    </div>
+    
