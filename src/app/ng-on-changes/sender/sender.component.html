@@ -1,0 +1,8 @@
+<div>
+    <app-reciver [user]="currentUser"></app-reciver>
+    <br>
+    <br>
+ <form>   <input type="text" [(ngModel)]="name" name="name" required><br>
+    <input type="email" [(ngModel)]="email" name="email" required></form>
+    <button (click)="updateUser()">Update User</button>
+  </div>
